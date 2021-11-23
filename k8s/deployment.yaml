@@ -18,7 +18,7 @@ spec:
         app: pyapp
     spec:
       containers:
-      - image: harbor.apps.cf.tanzutime.com/demo/pyapp
+      - image: harbor.apps.cf.tanzutime.com/demo/pyapp:b17.20211123.175602
         imagePullPolicy: Always
         name: pyapp
         resources: {}

@@ -1,15 +1,17 @@
 apiVersion: projectcontour.io/v1
 kind: HTTPProxy
 metadata:
-  name: basic
+  name: contour
 spec:
   virtualhost:
     fqdn: pyapp.demo.tanzutime.com
+    # tls:
+    #   secretName: pyapp-tls
   routes:
     - conditions:
       - prefix: /
       services:
-        - name: lb
+        - name: pyapp
           port: 80
       # - prefix: /
       # services:

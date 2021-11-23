@@ -29,18 +29,16 @@ change it clusterip
 
 use ingress!
 
-Run wordpress yamls
+kubectl create secret tls pyapp-tls --cert=tls.crt --key=tls.key
 
-bonus for later: api gateway
+update ingress with tls
+
+Run wordpress yamls
 
 helm install redis tac/redis
 
-Day in a life:
+kubectl get secret --namespace default redis -o jsonpath="{.data.redis-password}" | base64 --decode
 
-TBS
-Harbor
-TAC
-RabbitMQ
-vSphere with Tanzu
-API Gateway
+Update code
+
 
