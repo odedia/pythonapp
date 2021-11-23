@@ -4,13 +4,13 @@ metadata:
   name: basic
 spec:
   virtualhost:
-    fqdn: pyapp.spring.tanzutime.com
+    fqdn: pyapp.demo.tanzutime.com
   routes:
     - conditions:
       - prefix: /
       services:
-        - name: pyapp
-          port: 5000
+        - name: lb
+          port: 80
       # - prefix: /
       # services:
       #   - name: frontend

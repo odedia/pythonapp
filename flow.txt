@@ -1,10 +1,19 @@
+pip3 install -r requirements.txt
+
 python index.py
 
-docker build
+docker build -t harbor.apps.cf.tanzutime.com/demo/pyapp .
 
-docker run -p 5000:5000 pyapp
+docker push harbor.apps.cf.tanzutime.com/demo/pyapp
+
+docker run -p 5000:5000 harbor.apps.cf.tanzutime.com/demo/pyapp
 
 docker tag + push
+
+pb image create pyapp \
+    --tag harbor.apps.cf.tanzutime.com/demo/pyapp \
+    --git https://github.com/odedia/pythonapp.git \
+    --git-revision main
 
 kubectl run nginx --image=harbor.apps.cf.tanzutime.com/demo/nginx
 
@@ -24,6 +33,7 @@ Run wordpress yamls
 
 bonus for later: api gateway
 
+helm install redis tac/redis
 
 Day in a life:
 

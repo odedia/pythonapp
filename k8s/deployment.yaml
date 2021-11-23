@@ -1,23 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  creationTimestamp: null
   labels:
-    app: webpython
-  name: webpython
+    app: pyapp
+  name: pyapp
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: webpython
+      app: pyapp
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: webpython
+        app: pyapp
     spec:
       containers:
-      - image: harbor.apps.cf.tanzutime.com/demo/pythonapp:latest
-        name: webpython
+      - image: harbor.apps.cf.tanzutime.com/demo/pyapp
+        imagePullPolicy: Always
+        name: pyapp
         resources: {}
 status: {}
