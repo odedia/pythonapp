@@ -1,0 +1,36 @@
+python index.py
+
+docker build
+
+docker run -p 5000:5000 pyapp
+
+docker tag + push
+
+kubectl run nginx --image=harbor.apps.cf.tanzutime.com/demo/nginx
+
+kubectl run pyapp --image=harbor.apps.cf.tanzutime.com/demo/pyapp
+
+kubectl create deployment pyapp --image=harbor.apps.cf.tanzutime.com/demo/pyapp --replicas=3
+
+kubectl expose deployment/pyapp --type="LoadBalancer" --port 5000 --target-port 5000
+
+kubectl expose deployment/pyapp  --port 5000 --target-port 5000
+
+change it clusterip
+
+use ingress!
+
+Run wordpress yamls
+
+bonus for later: api gateway
+
+
+Day in a life:
+
+TBS
+Harbor
+TAC
+RabbitMQ
+vSphere with Tanzu
+API Gateway
+

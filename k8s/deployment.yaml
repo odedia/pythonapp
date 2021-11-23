@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: webpython
+  name: webpython
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: webpython
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: webpython
+    spec:
+      containers:
+      - image: harbor.apps.cf.tanzutime.com/demo/pythonapp:latest
+        name: webpython
+        resources: {}
+status: {}

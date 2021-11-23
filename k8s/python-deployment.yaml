@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: my-python-app
+  name: my-python-app
+  namespace: webinar
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-python-app
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: my-python-app
+    spec:
+      containers:
+      - image: harbor.apps.cf.tanzutime.com/shaam/my-python-app:v2
+        imagePullPolicy: IfNotPresent
+        name: my-python-app
