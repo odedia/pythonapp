@@ -5,13 +5,10 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    # redis = Redis(
-    #     host= 'redis-master',
-    #     port= '6379',
-    #     password= 'yFZSNGR7zq')
-    # redis.set('mykey', 'Hello from Python!')
-    # value = redis.get('mykey') 
-    # print("value from redis is ", value)
+    redis = Redis(
+        host= 'redis-master',
+        port= '6379',
+        password= 'KyyFmwDuc9')
     return "Kubernetes on vSphere! #tanzu #vmware @KobiShamama @OdedShopen @INPRocks!"
 
 
