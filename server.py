@@ -9,7 +9,7 @@ def hello():
         host= 'redis-master',
         port= '6379',
         password= 'KyyFmwDuc9')
-    return "Kubernetes on vSphere! #tanzu #vmware @KobiShamama @OdedShopen @INPRocks!"
+    return "Kubernetes on vSphere! #tanzu #vmware @KobiShamama @OdedShopen!"
 
 
 if __name__ == "__main__":
